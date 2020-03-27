@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <view
+        android:id="@+id/timingView"
+        class="edu.msu.carro228.team17project2.TimingView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constrainedWidth="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textCurrentPlayer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/currentPlayer_Msg"
+        app:layout_constraintBottom_toTopOf="@id/gameView"
+        app:layout_constraintLeft_toRightOf="@id/timingView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <edu.msu.carro228.team17project2.GameView
+        android:id="@+id/gameView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_above="@id/buttonInsert"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        app:layout_constraintBottom_toTopOf="@id/buttonInsert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timingView"
+        app:layout_constraintVertical_weight="7" />
+
+    <Button
+        android:id="@+id/buttonInsert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonQuit"
+        android:layout_alignStart="@id/gameView"
+        android:onClick="onInsert"
+        android:text="@string/buttonInsert_Label"
+        app:layout_constraintBottom_toTopOf="@id/buttonQuit"
+        app:layout_constraintRight_toLeftOf="@id/buttonDiscard"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/buttonDiscard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/buttonInsert"
+        android:layout_toEndOf="@id/buttonInsert"
+        android:onClick="onDiscard"
+        android:text="@string/buttonDiscard_Label"
+        app:layout_constraintBottom_toBottomOf="@id/buttonInsert"
+        app:layout_constraintLeft_toRightOf="@id/buttonInsert"
+        app:layout_constraintRight_toLeftOf="@id/buttonOpenValve" />
+
+    <Button
+        android:id="@+id/buttonOpenValve"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onOpenValve"
+        android:layout_alignBaseline="@id/buttonDiscard"
+        android:layout_toEndOf="@id/buttonDiscard"
+        android:text="@string/buttonOpenValve_Label"
+        app:layout_constraintBottom_toBottomOf="@id/buttonDiscard"
+        app:layout_constraintLeft_toRightOf="@id/buttonDiscard"
+        app:layout_constraintRight_toLeftOf="@id/buttonSurrender" />
+
+    <Button
+        android:id="@+id/buttonSurrender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/buttonOpenValve"
+        android:layout_toEndOf="@id/buttonOpenValve"
+        android:text="@string/buttonSurrender_Label"
+        app:layout_constraintBottom_toBottomOf="@id/buttonOpenValve"
+        app:layout_constraintLeft_toRightOf="@id/buttonOpenValve"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="onSurrender"
+        />
+
+    <Button
+        android:id="@+id/buttonQuit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:onClick="onQuitGame"
+        android:text="@string/buttonQuit_Label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onRotateClockwise"
+        android:text="@string/rotate90_Label"
+        app:layout_constraintLeft_toRightOf="@id/buttonN90"
+        app:layout_constraintRight_toLeftOf="@id/buttonReturn"
+        app:layout_constraintTop_toBottomOf="@id/buttonOpenValve" />
+
+    <Button
+        android:id="@+id/buttonN90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onRotateCounterClockwise"
+        android:text="@string/rotateN90_Label"
+        app:layout_constraintLeft_toRightOf="@id/buttonQuit"
+        app:layout_constraintRight_toLeftOf="@id/button90"
+        app:layout_constraintTop_toBottomOf="@id/buttonDiscard" />
+
+    <Button
+        android:id="@+id/buttonReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onReturnToTitle"
+        android:text="@string/buttonReturn_Label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

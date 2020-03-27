@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textCreateUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20px"
+        android:layout_marginBottom="75px"
+        android:text="@string/create_user" />
+
+    <TextView
+        android:id="@+id/textIDEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/textCreateUser"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20px"
+        android:text="@string/id_entry" />
+
+    <TextView
+        android:id="@+id/passwordEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/editText_ID_entry"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20px"
+        android:text="@string/password_entry" />
+
+    <TextView
+        android:id="@+id/passwordReEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/editText_password_entry"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20px"
+        android:text="@string/password_reentry" />
+
+
+    <EditText
+        android:id="@+id/editText_ID_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textIDEntry"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20px"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText_password_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordEntry"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20px"
+        android:inputType="textPassword" />
+
+
+    <EditText
+        android:id="@+id/editText_password_reentry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/passwordReEntry"
+        android:layout_alignParentBottom="false"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20px"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonCreateUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_password_reentry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+
+        android:onClick="onCreateUser"
+        android:text="@string/create_user_label" />
+
+</RelativeLayout>
